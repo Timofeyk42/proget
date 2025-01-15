@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Event</title>
+</head>
+<body>
+    <h1>Create New Event</h1>
+    {% if error %}
+        <p style="color:red">{{ error }}</p>
+    {% endif %}
+    <form method="post">
+        <label for="name_">Event Name:</label>
+        <input type="text" id="name_" name="name_" required><br><br>
+
+        <label for="rout_">Route:</label>
+        <input type="text" id="rout_" name="rout_" required><br><br>
+
+        <label for="quantity_teams">Number of Teams:</label>
+        <input type="number" id="quantity_teams" name="quantity_teams" min="1" required><br><br>
+
+        {% for i in range(1, 6) %}
+            <label for="name_team_{{ i }}">Team {{ i }} Name:</label>
+            <input type="text" id="name_team_{{ i }}" name="name_team_{{ i }}"><br><br>
+        {% endfor %}
+
+        <button type="submit">Create Event</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Created</title>
+</head>
+<body>
+    <h1>Event Created Successfully</h1>
+    <p>Name: {{ event.name }}</p>
+    <p>Route: {{ event.rout }}</p>
+    <p>Number of Teams: {{ event.quantity_teams }}</p>
+    <h2>Teams:</h2>
+    <ul>
+        {% for team in event.teams %}
+            <li>{{ team[0] }} - Score: {{ team[1] }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back to Home</a>
+</body>
+</html>
